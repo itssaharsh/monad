@@ -1,0 +1,48 @@
+{
+ "identifiers": [
+  "helpline-watch",
+  "calltree",
+  "thamba",
+  "recallindia",
+  "crossing-watch",
+  "clerkmark",
+  "canary-maze",
+  "dead-state",
+  "regrade",
+  "voxmorph",
+  "rollcall",
+  "countersign",
+  "unbilled",
+  "tablekeeper",
+  "meanwhile"
+ ],
+ "projects": [
+  {
+   "name": "thamba",
+   "summary": "second opinion for Pune seniors during digital-arrest scam calls",
+   "keywords": [
+    "scam",
+    "seniors",
+    "call"
+   ]
+  },
+  {
+   "name": "canary-maze",
+   "summary": "prove a secret moved between two clients with a record that verifies offline",
+   "keywords": [
+    "proof",
+    "record",
+    "verify"
+   ]
+  },
+  {
+   "name": "regrade",
+   "summary": "re-band youth-league teams and refixture pitch slots",
+   "keywords": [
+    "fixtures",
+    "slots",
+    "league"
+   ]
+  }
+ ]
+}

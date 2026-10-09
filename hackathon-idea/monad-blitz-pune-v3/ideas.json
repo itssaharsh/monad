@@ -1,0 +1,637 @@
+{
+ "run": {
+  "mode": "hackathon",
+  "context": "general",
+  "depth": "quick",
+  "date": "2026-10-10",
+  "slug": "monad-blitz-pune-v3",
+  "request": "make the idea / brainstorm an idea for Monad Blitz Pune V3; the most priority is to win",
+  "scope": "consumer apps on Monad (event theme)",
+  "request_type": "generate",
+  "discovery_method": "blind_subagent",
+  "problems_considered": 12,
+  "user_groups": [
+   "festival-goers and stallholders",
+   "Indian housing-society residents",
+   "pickup-game organisers",
+   "Indian renters"
+  ],
+  "context_seen": true,
+  "research_unavailable": true,
+  "seeds": {
+   "lenses": [
+    "painful workflows",
+    "bad incumbents",
+    "underserved",
+    "forced change",
+    "newly possible"
+   ],
+   "source_types": [
+    "news",
+    "legal Q&A",
+    "consumer complaints",
+    "regulator pages",
+    "trade press"
+   ]
+  }
+ },
+ "event": {
+  "name": "Monad Blitz Pune V3",
+  "url": "https://luma.com/MonadFoundation",
+  "platform": "Luma + GitHub fork (or Blitz Portal)",
+  "window": "1 day (about 7 build hours)",
+  "judging_format": "live 3-minute demos; phone voting by participants during and 15 min after demos; possibly 50% judges",
+  "sponsors": [
+   "Monad"
+  ],
+  "criteria": [
+   {
+    "criterion": "Novelty & originality",
+    "weight": "equal",
+    "quote": "Novelty & originality",
+    "source": "assumed",
+    "implication": "avoid the saturated categories (games 24%, betting 15% of 67 Indian Blitz entries)"
+   },
+   {
+    "criterion": "Innovative mechanics on Monad",
+    "weight": "equal",
+    "quote": "Innovative mechanics, especially ones that use Monad's potential (paraphrase of the London transcription)",
+    "source": "assumed",
+    "implication": "the core mechanic must need sub-second blocks, visibly"
+   },
+   {
+    "criterion": "Problem-solving",
+    "weight": "equal",
+    "quote": "does it creatively address a real or interesting challenge for consumer applications?",
+    "source": "assumed",
+    "implication": "anchor on a real, local, evidenced problem"
+   },
+   {
+    "criterion": "Learning & experimentation",
+    "weight": "equal",
+    "quote": "Learning & experimentation",
+    "source": "assumed",
+    "implication": "show the mechanism and its honest limits to a developer room"
+   }
+  ]
+ },
+ "sponsor_verdicts": [
+  {
+   "sponsor": "Monad",
+   "verdict": "core for Parchi",
+   "why": "the live in-room randomness round and the instant draw rely on sub-second blocks and near-free transactions; the public record is what makes the result checkable"
+  }
+ ],
+ "defaults": [
+  "D1: On-chain casual game (clicker, flappy bird, tap-to-mine, on-chain chess)",
+  "D2: Creator tipping / \"buy me a coffee\" with crypto, per-second streaming tips",
+  "D3: Prediction market on cricket / IPL / elections among friends",
+  "D4: NFT event ticketing with anti-scalping resale caps",
+  "D5: Social tokens / creator coins / friend.tech clone",
+  "D6: Bill splitting / shared expenses settled on-chain (Splitwise on-chain)",
+  "D7: On-chain chit fund / ROSCA / committee",
+  "D8: Pay-per-second streaming (video, music, Wi-Fi, parking)",
+  "D9: On-chain lottery / raffle / giveaway with VRF",
+  "D10: Loyalty points as tokens for local shops",
+  "D11: Real-time multiplayer on-chain game (agar.io / tank battle / trivia with stakes)",
+  "D12: Crowdfunding / donation tracking with transparency",
+  "D13: Decentralised social feed / on-chain likes and reactions (pay-per-like)",
+  "D14: AI agent wallet that pays for things for you",
+  "D15: Gasless onboarding / social-login wallet \"for normies\""
+ ],
+ "research_gaps": [
+  "research_unavailable is set because no web page could be opened from this container (egress policy); web search summaries were available and are used only as leads",
+  "WebFetch and curl were blocked in this container: every evidence item is the search tool's summary of a page ('as returned'), not an opened page",
+  "No Monad Blitz winner could be identified; no winner base rates",
+  "Monad testnet block time, prevrandao behaviour and RPC rate limits not confirmed from docs (docs.monad.xyz blocked)",
+  "Pune V3's own rules page and voting form not seen; criteria come from a London participant's transcription of the shared Blitz brief",
+  "Dates missing for E13 (Deccan Chronicle) and E15 (Kaanoon)"
+ ],
+ "shortfall_note": "One survivor. No number was asked for; three other solutions passed the wrapper filter but were cut at the shortlist for a 3-minute live room demo (event wallet: value only shows over a whole event; deposit locker and slot hand-off: the chain adds convenience, not necessity). Nothing died on padding.",
+ "killed": [
+  {
+   "name": "Float-free event wallet",
+   "stage": "shortlist",
+   "reason": "strongest evidence (festival refunds, stallholders unpaid) but the value only shows over a whole event and needs a rupee on/off-ramp custodian; a 3-minute room demo can't show the before/after (impossible_demo risk); Indian evidence is a hypothesis",
+   "fingerprint": {
+    "user": "festival-goer and stallholder",
+    "job": "get paid and refunded without the organiser holding the float",
+    "mechanism": "contract-held float with instant split settlement and anytime refunds"
+   }
+  },
+  {
+   "name": "Deposit locker with timeout refund",
+   "stage": "shortlist",
+   "reason": "speed is convenience, not necessity; operator adoption is the whole risk; demo is a single escrow",
+   "fingerprint": {
+    "user": "renter at a bike-rental counter",
+    "job": "get the deposit back",
+    "mechanism": "escrow with automatic refund if no claim by a deadline"
+   }
+  },
+  {
+   "name": "Pickup slot hand-off",
+   "stage": "shortlist",
+   "reason": "a database plus UPI does it; earlier products failed on onboarding, not fees",
+   "fingerprint": {
+    "user": "pickup-game organiser",
+    "job": "cover late dropouts",
+    "mechanism": "atomic slot swap with refund"
+   }
+  },
+  {
+   "name": "No-show deposits for free meetups",
+   "stage": "prior-art",
+   "reason": "crowded: Kickback, Unlock, Kleek, TOP-G",
+   "fingerprint": {
+    "user": "meetup host",
+    "job": "reduce no-shows",
+    "mechanism": "stake to RSVP"
+   }
+  },
+  {
+   "name": "NFT tickets against resale fraud",
+   "stage": "validation",
+   "reason": "tickets are issued off-chain so the app can't verify them; default NFT-ticketing idea",
+   "fingerprint": {
+    "user": "concert fan",
+    "job": "buy resale safely",
+    "mechanism": "NFT tickets"
+   }
+  },
+  {
+   "name": "On-chain chit fund",
+   "stage": "checks",
+   "reason": "regulated under the Chit Funds Act; speed adds nothing",
+   "fingerprint": {
+    "user": "BC member",
+    "job": "rotating savings",
+    "mechanism": "contract-run chit"
+   }
+  },
+  {
+   "name": "Friend bets on cricket",
+   "stage": "checks",
+   "reason": "online money games banned in India from 1 May 2026",
+   "fingerprint": {
+    "user": "cricket fan",
+    "job": "bet with friends",
+    "mechanism": "prediction market"
+   }
+  },
+  {
+   "name": "Micro-tipping",
+   "stage": "validation",
+   "reason": "UPI P2P free and zero MDR up to Rs 2,000 remove the fee argument",
+   "fingerprint": {
+    "user": "diner",
+    "job": "tip staff",
+    "mechanism": "micro-payments"
+   }
+  },
+  {
+   "name": "AI committee assistant",
+   "stage": "wrapper",
+   "reason": "reduces to 'give the bye-laws to a model, get a notice back'",
+   "fingerprint": {
+    "user": "society secretary",
+    "job": "draft allotment notices",
+    "mechanism": "LLM drafting"
+   }
+  },
+  {
+   "name": "UPI screenshot reconciler",
+   "stage": "wrapper",
+   "reason": "reduces to 'give screenshots to a model, get a table back'",
+   "fingerprint": {
+    "user": "group organiser",
+    "job": "reconcile payments",
+    "mechanism": "LLM extraction"
+   }
+  }
+ ],
+ "ideas": [
+  {
+   "name": "Parchi",
+   "origin": "problem",
+   "problem_status": "hypothesis",
+   "wedge_status": "untested",
+   "revisit": "",
+   "fingerprint": {
+    "domain": "community governance",
+    "user": "a housing-society resident at the AGM where parking slots are drawn",
+    "job": "accept the allocation of scarce parking or amenity slots",
+    "mechanism": "eligible list frozen on-chain before randomness exists, randomness contributed by every resident in the room, deterministic on-chain allocation, a verifier that recomputes it on any phone",
+    "mechanism_family": "verify",
+    "buyer_or_demo": "the whole room joins a draw by QR, adds randomness, the allocation lands in about a second, every phone verifies it, and the host's re-run attempt reverts"
+   },
+   "recycled": {
+    "category": "none",
+    "wedge": ""
+   },
+   "default_match": {
+    "matches": "D9 verifiable raffle",
+    "why_different": "different user and job (neighbours allocating scarce shared slots and distrusting the drawer, not a promotional giveaway); adds the pre-committed eligible list that the advocates' objection targets (E15: 'not even all members were called'); randomness comes from the people present, not an oracle the committee picks"
+   },
+   "claims": [
+    {
+     "type": "assumption",
+     "text": "(lead, page not opened: search summary) Owners in a Hyderabad gated community rejected the builder's parking allotment as a 'rigged lottery' with no declared procedure",
+     "strength": "moderate",
+     "source": "https://www.deccanchronicle.com/nation/someday-our-emis-will-cover-our-dignity-888733",
+     "org": "Deccan Chronicle",
+     "speaker": "reporter",
+     "about": "residents of one gated community",
+     "how": "search-result",
+     "date": "2026-10 (accessed)",
+     "segment": "same",
+     "source_type": "news"
+    },
+    {
+     "type": "assumption",
+     "text": "(lead, page not opened: search summary) A Pune-area society of 45 members allotted parking by lottery; columns describe cooperative-court complaints over parking under the bye-laws",
+     "strength": "moderate",
+     "source": "https://www.moneylife.in/article/housing-society-problems-and-solutions-parking-rules-maintenance-dues-and-agm-participation/81419.html",
+     "org": "Moneylife",
+     "speaker": "columnist from a housing-law NGO",
+     "about": "readers' societies",
+     "how": "search-result",
+     "date": "2025-08",
+     "segment": "same",
+     "source_type": "news"
+    },
+    {
+     "type": "assumption",
+     "text": "(lead, page not opened: search summary) Advocates answering residents: drawing lots is the accepted method when members outnumber slots; a draw where not all members were called is improper; challenges go to the deputy registrar",
+     "strength": "moderate",
+     "source": "https://www.kaanoon.com/224859/parking-allotment-issues",
+     "org": "Kaanoon",
+     "speaker": "advocates",
+     "about": "residents' cases",
+     "how": "search-result",
+     "date": "2026-10 (accessed)",
+     "segment": "same",
+     "source_type": "legal Q&A"
+    },
+    {
+     "type": "assumption",
+     "text": "Residents present at an AGM will scan a QR and tap once from their own phone",
+     "strength": "weak",
+     "source": "",
+     "org": "",
+     "speaker": "",
+     "about": "",
+     "how": "user",
+     "date": "2026-10",
+     "segment": "same",
+     "source_type": "assumption"
+    },
+    {
+     "type": "hypothesis",
+     "text": "At least 3 of 10 Pune society residents asked have seen a parking or amenity allotment contested in their society in the last 3 years",
+     "strength": "weak",
+     "source": "",
+     "org": "",
+     "speaker": "",
+     "about": "",
+     "how": "user",
+     "date": "2026-10",
+     "segment": "same",
+     "source_type": "test"
+    }
+   ],
+   "evidence_summary": {
+    "strength": "weak",
+    "why": "three independent organisations (news, a housing-law column, advocates) describe contested society draws, but every page was blocked from this container, so they are leads read as search summaries; the problem stays a hypothesis until the first test",
+    "counter": "many parking disputes are about entitlement (who is eligible), which a fair draw doesn't fix; some societies simply trust their committee",
+    "missing_voices": "committee members who run draws; residents who never complain online"
+   },
+   "competition_scan": {
+    "startup": "MyGate and NoBrokerHood run society apps (MyGate has a rent-a-slot market); NoBrokerHood describes lotteries as a manual practice",
+    "oss": "commit-reveal and VRF raffle contracts are common examples",
+    "hackathon": "SponsoredRaffle (Gelato VRF raffle) and FairDrops (skill-game giveaways) in past Blitz repos; neither commits an eligibility list or takes randomness from the room",
+    "platform": "RANDOM.ORG third-party draws for businesses",
+    "research": "commit-reveal randomness beacons (RANDAO) are well known; last-revealer bias is the known weakness",
+    "workaround": "paper chits in a bowl at the AGM, then complaints to the registrar"
+   },
+   "competitors": [
+    {
+     "name": "RANDOM.ORG third-party draws",
+     "kind": "platform",
+     "url": "https://www.random.org/draws/",
+     "difference": "the committee still chooses when to run and whether to re-run; residents can't contribute or recompute"
+    },
+    {
+     "name": "SponsoredRaffle (Monad Blitz)",
+     "kind": "hackathon",
+     "url": "https://github.com/monad-developers/monad-blitz-delhi",
+     "difference": "oracle VRF raffle for giveaways; no frozen eligible list, no in-room contribution, no allocation of named slots"
+    }
+   ],
+   "wedge": "the eligible list is frozen on-chain before any randomness exists, every resident in the room adds randomness from their phone with no wallet or gas, and any phone can recompute the result; paper chits and third-party draws can't show any of the three",
+   "card": {
+    "concept": "Parchi runs a society's parking draw that nobody can rig: everyone in the room adds randomness from their phone, the result lands in about a second, and anyone can check it.",
+    "problem": "Parking and amenity draws in Indian housing societies get called rigged: members left off the list, slots reassigned, draws re-run; disputes go to the registrar or cooperative court (E13, E14, E15).",
+    "user": "a resident at the AGM allotment; and the committee member who wants a draw nobody can accuse them of rigging",
+    "why_it_matters": "a contested draw costs months of disputes; the suspicion comes from the drawer being able to re-run or edit the list in private",
+    "core_workflow": "committee creates a draw with slots and the eligible flats -> residents scan the QR, pick their flat, tap to add a secret (commit) -> committee closes entries: the list is frozen on-chain -> phones reveal secrets automatically -> after the reveal window, the seed mixes all reveals with a block hash from after the close -> the contract allocates slots with a deterministic shuffle -> every phone shows its result and a Verify button that recomputes it from chain data; a second draw attempt reverts",
+    "ai_role": "n/a: no model in the loop",
+    "non_ai_product": "the whole product: draw registry, frozen eligible lists, commit-reveal contribution, on-chain allocation, gasless relayer, verifier page and each society's draw history",
+    "data_loop": "every draw leaves a public, re-checkable record per society; later draws (re-allotment, guest parking rotation) build on it",
+    "hard_part": "a fair seed with ~100 contributors in under a minute: commit-reveal with a post-close block hash so a withholding last revealer gains nothing, gasless signed entries relayed without nonce collisions, gas limits sized because Monad charges the limit, and an in-browser verifier that reproduces the contract's shuffle bit for bit; the non-reproducible part is the public per-society record of draws, not the code",
+    "technical_implementation": "Solidity contract on Monad testnet (draw state machine, EIP-712 signed joins and reveals, partial Fisher-Yates); Next.js on Vercel with a relayer route holding a small pool of relayer keys; phones hold a burner key in localStorage; one cached read endpoint so 100 phones don't hit the public RPC; viem everywhere; no wallet extension",
+    "mvp_scope": "IN: create draw, QR join with flat label, commit, close, auto-reveal, draw, allocation board, phone result, verifier, re-run revert, simulated-residents button for rehearsal. OUT: identity checks for flats, priority rules (EV, senior), proxies for absent members, mainnet",
+    "differentiation": "versus paper chits: a frozen list and a result anyone recomputes; versus RANDOM.ORG: the committee can't choose when or whether to re-run; versus past Blitz raffles: allocation of named slots with randomness from the room, not an oracle",
+    "risks": [
+     "venue Wi-Fi or RPC rate limits during the live round (mitigated: relayer + cached reads + simulated residents fallback)",
+     "the room reads it as 'just a raffle' (mitigated: lead with the society problem and the frozen list)",
+     "entitlement disputes remain unsolved (disclosed as a scope limit)"
+    ],
+    "buildable_in_event": "solo with a coding agent in ~6 h: contract + tests 1.5 h, relayer + reads 1 h, five screens 2.5 h, deploy and rehearsal 1 h; residents can be simulated (labelled) if the room doesn't join"
+   },
+   "wrapper_test": {
+    "product_is": "a draw registry for housing societies that freezes the eligible list, collects randomness from residents' phones, allocates slots on-chain and lets anyone recompute the result",
+    "ai_in_loop": false
+   },
+   "authenticity": [
+    {
+     "signal": "narrow_persona",
+     "how": "a resident at the AGM where stilt-parking slots are drawn among more members than slots",
+     "basis": "evidence"
+    },
+    {
+     "signal": "existing_workaround",
+     "how": "chits in a bowl at the AGM, then complaints to the deputy registrar",
+     "basis": "evidence"
+    },
+    {
+     "signal": "domain_logic",
+     "how": "eligible flats fixed before entries open; one entry per flat; slots named P1..Pn",
+     "basis": "commitment"
+    },
+    {
+     "signal": "accumulated_history",
+     "how": "each society's past draws stay public and re-checkable, so a re-allotment cites the earlier record",
+     "basis": "commitment"
+    },
+    {
+     "signal": "deterministic_core",
+     "how": "the shuffle is a pure function of the seed and the frozen list; the verifier test reproduces the contract's output",
+     "basis": "commitment"
+    },
+    {
+     "signal": "distribution_or_trust",
+     "how": "neither the committee nor the app operator can re-run or edit the list, which is the trust the evidence says is missing",
+     "basis": "evidence"
+    }
+   ],
+   "moat": {
+    "mechanism": [
+     "accumulated history",
+     "regulatory or trust position"
+    ],
+    "why_not_copyable": "no model involved; the value is a public record of each society's draws that its residents already trust, which a competitor can't backfill"
+   },
+   "alternatives": [
+    {
+     "alternative": "paper",
+     "today": "chits in a steel bowl drawn at the AGM",
+     "better": "the list is fixed in public first and anyone can recompute the result afterwards"
+    },
+    {
+     "alternative": "existing saas",
+     "today": "society apps record the outcome typed in by the committee",
+     "better": "the outcome is produced, not typed in"
+    }
+   ],
+   "why_now": {
+    "kind": "cost",
+    "date": "2025-11",
+    "change": "a public EVM chain with sub-second blocks and near-zero fees reached mainnet (Monad, Nov 2025; testnet free)",
+    "threshold": "about 100 signed contributions plus the draw inside about 60 seconds at roughly zero cost per resident (assumption)",
+    "who_couldnt_before": "a 60-flat society AGM with no crypto-holding residents and no budget for a paid third party",
+    "sentence": "Since Nov 2025, sub-second, near-free blocks let a society AGM run a draw where every resident present adds randomness from their phone in under a minute, with gas sponsored, instead of paper chits or a paid third party; earlier verifiable raffles served crypto-native giveaways where residents would need wallets and gas (assumption)."
+   },
+   "anti_patterns": {
+    "no_clear_user": {
+     "hit": false,
+     "why": "AGM resident and committee member"
+    },
+    "nonexistent_problem": {
+     "hit": false,
+     "why": "E13-E15 from three organisations"
+    },
+    "technology_first": {
+     "hit": false,
+     "why": "problem found by blind discovery before the chain was considered for it"
+    },
+    "clone": {
+     "hit": false,
+     "why": "no society draw tool with frozen list + room randomness found"
+    },
+    "recycled_generic": {
+     "hit": false,
+     "why": "not on the recycled list"
+    },
+    "default_match": {
+     "hit": false,
+     "why": "D9 match declared with a research-backed wedge"
+    },
+    "ledger_repeat": {
+     "hit": false,
+     "why": "first run"
+    },
+    "chatgpt_wrapper": {
+     "hit": false,
+     "why": "no model"
+    },
+    "generic_rag": {
+     "hit": false,
+     "why": "no model"
+    },
+    "generic_agent": {
+     "hit": false,
+     "why": "no agent"
+    },
+    "generic_dashboard": {
+     "hit": false,
+     "why": "it produces the allocation"
+    },
+    "llm_wrapper": {
+     "hit": false,
+     "why": "no model"
+    },
+    "no_product_without_model": {
+     "hit": false,
+     "why": "no model"
+    },
+    "prompt_moat": {
+     "hit": false,
+     "why": "no prompt"
+    },
+    "textbox_ui": {
+     "hit": false,
+     "why": "QR join and tap"
+    },
+    "chatgpt_obvious": {
+     "hit": false,
+     "why": "generic raffle is obvious; the society allocation with frozen list is not the obvious output"
+    },
+    "sponsor_first": {
+     "hit": false,
+     "why": "problem first"
+    },
+    "default_entry": {
+     "hit": false,
+     "why": "raffles are ~1 of 67 Indian entries; the angle is allocation with room randomness"
+    },
+    "wrong_brief": {
+     "hit": false,
+     "why": "consumer app on Monad"
+    },
+    "impossible_demo": {
+     "hit": false,
+     "why": "the room itself is the society"
+    },
+    "unrealistic_data": {
+     "hit": false,
+     "why": "the room's own entries; simulated residents labelled"
+    },
+    "resume_first": {
+     "hit": false,
+     "why": "ideas chosen before background was read"
+    },
+    "prior_project_variation": {
+     "hit": false,
+     "why": "no past draw or allocation project"
+    },
+    "forced_blockchain": {
+     "hit": false,
+     "why": "the dispute is that a private database can be re-run; a public record is the fix"
+    },
+    "forced_ar_vr": {
+     "hit": false,
+     "why": "none"
+    },
+    "forced_iot": {
+     "hit": false,
+     "why": "none"
+    },
+    "forced_multi_agent": {
+     "hit": false,
+     "why": "none"
+    },
+    "superficial_sponsor": {
+     "hit": false,
+     "why": "speed and fees are what make the live round possible"
+    },
+    "platformmaxxing": {
+     "hit": false,
+     "why": "one contract"
+    },
+    "weekend_clone": {
+     "hit": true,
+     "why": "a contract and a web app; the hard part (fair seed, relayer, verifier) is shown in the demo"
+    }
+   },
+   "sponsors": [
+    {
+     "sponsor": "Monad",
+     "product": "Monad testnet",
+     "capability": "sub-second blocks, near-free transactions, EVM",
+     "why_needed": "about 100 residents' entries and reveals plus the draw must settle within a minute in a live meeting, gas-sponsored",
+     "without_it": "on a 12 s chain the reveal window and draw take minutes and sponsoring every resident costs real money; on a database the committee can re-run privately",
+     "component": "the draw contract and the live contribution round",
+     "depth": "core",
+     "sponsor_goal": "shows Monad's speed doing something people feel: a whole room transacting at once and getting a checkable result in a second"
+    }
+   ],
+   "criteria_alignment": [
+    {
+     "criterion": "Novelty & originality",
+     "how": "turns the room into the randomness source for a real Indian society problem",
+     "basis": "inference",
+     "source": "https://github.com/monad-developers/monad-blitz-london",
+     "gap": "raffles exist; must lead with allocation + frozen list"
+    },
+    {
+     "criterion": "Innovative mechanics on Monad",
+     "how": "100-person commit-reveal round in under a minute, live block ticker on the projector",
+     "basis": "official",
+     "source": "https://github.com/monad-developers/monad-blitz-london",
+     "gap": "testnet RPC limits unverified"
+    },
+    {
+     "criterion": "Problem-solving",
+     "how": "society parking draws contested as rigged (E13-E15)",
+     "basis": "inference",
+     "source": "https://www.moneylife.in/article/housing-society-problems-and-solutions-parking-rules-maintenance-dues-and-agm-participation/81419.html",
+     "gap": "entitlement disputes out of scope"
+    },
+    {
+     "criterion": "Learning & experimentation",
+     "how": "explain last-revealer bias and how the post-close block hash removes it",
+     "basis": "pattern",
+     "source": "https://github.com/monad-developers/monad-blitz-london",
+     "gap": "none"
+    }
+   ],
+   "demo": {
+    "first_10s": "Every Pune society has had this fight: the parking draw. Chits in a bowl, and half the building says it was rigged.",
+    "first_minute": "QR on screen; the room joins as residents of a fictional society; entries land on the projector block by block",
+    "wow_moment": "host closes entries, phones reveal, the allocation lands in about a second; then every phone taps Verify and shows a match; the host clicks Draw again and it reverts on-chain",
+    "technical_depth": "a 20-second card: frozen list hash, N reveals, block hash after close, seed, shuffle; why the last revealer can't bias it",
+    "story": "the Moneylife and Kaanoon cases of contested draws and registrar complaints",
+    "unhappy_path": "re-run reverts; late joiner after close is refused; a phone that went to sleep still counts (its commit stays in)",
+    "judge_touches": "their own phone: join, tap, result, verify",
+    "moments": [
+     {
+      "criterion": "Innovative mechanics on Monad",
+      "moment": "block ticker with 80 entries landing in seconds"
+     },
+     {
+      "criterion": "Problem-solving",
+      "moment": "first 10 s hook"
+     },
+     {
+      "criterion": "Novelty & originality",
+      "moment": "the room is the randomness"
+     },
+     {
+      "criterion": "Learning & experimentation",
+      "moment": "the seed card"
+     }
+    ]
+   },
+   "closest_past_winner": {
+    "name": "none found",
+    "searches": [
+     "Monad Blitz winners (11 searches, see judging-intel.md)"
+    ]
+   },
+   "outsider": "Script: 'In a society parking draw, the committee can re-run it or leave people off the list. Parchi freezes the list in public, everyone in the room adds randomness from their phone, and anyone can check the result. Would your society use this?' Not yet run with a person."
+  }
+ ],
+ "tradeoffs": [
+  {
+   "dimension": "evidence strength",
+   "by_idea": {
+    "Parchi": "moderate, three organisations, read as search summaries",
+    "doing nothing": "paper chits keep working where committees are trusted"
+   }
+  },
+  {
+   "dimension": "demo risk",
+   "by_idea": {
+    "Parchi": "depends on venue network and testnet RPC; simulated residents as fallback"
+   }
+  },
+  {
+   "dimension": "build complexity",
+   "by_idea": {
+    "Parchi": "one contract, one relayer route, five screens"
+   }
+  }
+ ],
+ "personal_layer": []
+}
