@@ -1,11 +1,14 @@
 # Marshal: what's left and how to finish it
 
-**State (15:58 IST):** all code is written and tested on a local chain, on branch `marshal`:
-- contract: 14 Forge tests;
-- server: 19 unit tests;
-- three screens.
+**State (16:18 IST): LIVE, deployed via path A from the Claude session.** Don't run path B.
+- App: https://marshal-production-7481.up.railway.app (Railway project `dibs`, service `marshal`; Dibs `web` untouched)
+- MarshalWallet: `0x16b33447c69899aD7606a78e6b302DE54E551949` · tINR `0x7D1b24eb8B02f27c873C08ca25dAd9Ab4f856d70` (Monad testnet)
+- Owner: `0xB4763923367280099a689071b84a4C8Ad095Cb3b` (pre-funded 0.3 MON from the Dibs operator; handover done)
+- Server/agent: `0x9A2221e1951D76b0D9Aea2f31659C5f86F3D1A1A` (6 MON from the Dibs operator; ~5.3 left, ~170 chats)
+- Live smoke: attack → REFUSED NotAllowlisted (tx 0x84e7cb67…92c6)
+- Don't redeploy during the pitch: recorded conversations live in the container and are lost on redeploy.
 
-The Claude session can't reach Monad, Railway or push to `itssaharsh/dibs` yet. Use **path A** if those open up, or **path B** (your laptop agent) right now.
+Below is the original plan, kept for the record.
 
 ## Path A: the Claude session finishes it (needs all three)
 1. Claude GitHub App installed on `itssaharsh/dibs`.
